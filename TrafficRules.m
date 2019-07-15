@@ -1,0 +1,79 @@
+//
+//  TrafficRules.m
+//  EZTrafficSG
+//
+//  Created by DIT_DMIT on 6/2/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "TrafficRules.h"
+#import "EZTrafficSGViewController.h"
+#import "TrafficRulesPage2.h"
+
+@implementation TrafficRules
+
+
+-(IBAction)switchtoMenu{
+	EZTrafficSGViewController * screen =[[EZTrafficSGViewController alloc] initWithNibName:nil bundle:nil];
+	//screen.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    //[self presentModalViewController:screen animated:YES];
+	[self.navigationController pushViewController:screen animated:YES];
+}
+
+
+-(IBAction)switchToNextPage;
+{
+    
+    //TrafficRules * trafficrules = [[TrafficRules alloc]initWithNibName:@"Rules2" bundle:nil];
+//    [self presentModalViewController:trafficrules animated:YES];
+    
+    TrafficRulesPage2 * trafficrulesPage2 = [[TrafficRulesPage2 alloc] initWithNibName:nil bundle:nil];
+	//trafficrulesPage2.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    //[self presentModalViewController:trafficrulesPage2 animated:YES];
+	[self.navigationController pushViewController:trafficrulesPage2 animated:YES];
+    
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+	
+	appDelegate = (EZTrafficSGAppDelegate *)[[UIApplication sharedApplication] delegate];
+	self.title = @"Traffic Rules";
+
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+@end
